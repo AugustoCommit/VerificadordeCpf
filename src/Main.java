@@ -3,11 +3,11 @@ public class Main{
     public static void main(String[] args) {
         Scanner leitura = new Scanner(System.in);
         System.out.println("Digite o seu CPF: ");
-        String entradaCPF = leitura.nextLine();;
-        String cpf = entradaCPF, cpfMascara;
+        String entradaCPF = leitura.nextLine();
+        String cpfMascara;
 
         // ELIMINANDO OS PONTOS E O HÍFEN DA STRING
-        cpfMascara = cpf.replaceAll("\\D","");
+        cpfMascara = entradaCPF.replaceAll("\\D","");
        //System.out.println(cpfMascara);
 
         if(cpfMascara.length() == 11){
@@ -40,12 +40,7 @@ public class Main{
 
             //VERIFICADOR DE AUTENTICIDADE
             boolean vrf1;
-            if(resto1 == digitoVrf1 && resto2 == digitoVrf2){
-                vrf1 = true;
-            }
-            else {
-                vrf1 = false;
-            }
+            vrf1 = resto1 == digitoVrf1 || resto2 == digitoVrf2;
             System.out.println(vrf1);
 
         }
